@@ -5,7 +5,6 @@ from src.exception import CustomException
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
-from src.utils import fetch_data_from_mysql
 
 @dataclass
 class DataIngestionconfig:
@@ -20,8 +19,8 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info('Data Ingestion method starts')
         try:
-            fetch_data_from_mysql(host='localhost', username='root', password='', database='carproject', table='carproject')
-            file_path = os.path.join('..', '..', 'data', 'gemstone.csv')
+            
+            file_path = os.path.join('..', '..', 'data', 'carproject.csv')
 
             df=pd.read_csv(file_path)
             logging.info('Dataset read as pandas DataFrame')

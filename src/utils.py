@@ -62,6 +62,6 @@ def fetch_data_from_mysql(host, username, password, database, table, output_fold
     print(f'Data fetched and saved to: {output_file}')
 
 
-fetch_data_from_mysql(host='localhost', username='root', password='Sneha_9601', database='carproject', table='carproject')  
+fetch_data_from_mysql(host='localhost', username='root', password='Sneha_9601', database='diamondproject', table='carproject')  
 
  

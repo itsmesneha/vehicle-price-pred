@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: Project-1-mlpipeline
+Version: 0.0.1
+Summary: An end-to-end ml project
+Author: Sneha Singh
+Author-email: snehasinggh65@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: flask
+Requires-Dist: scikit-learn
+Requires-Dist: seaborn
+Requires-Dist: datetime
+Requires-Dist: mysql-connector-python
+Requires-Dist: sqlalchemy
+Requires-Dist: mysql-client
