@@ -1,0 +1,23 @@
+[2024-04-17 15:20:25,136] 20 root - INFO - Data Ingestion method starts
+[2024-04-17 15:20:25,444] 26 root - INFO - Dataset read as pandas DataFrame
+[2024-04-17 15:20:26,994] 30 root - INFO - Train Test Split
+[2024-04-17 15:20:28,895] 36 root - INFO - Ingestion of Data in completed
+[2024-04-17 15:20:29,479] 71 root - INFO - Read train and test data completed
+[2024-04-17 15:20:29,718] 72 root - INFO - Train Dataframe Head : 
+        Car_Name  Year  Selling_Price  Present_Price  Kms_Driven Fuel_Type Seller_Type Transmission  Owner  Age_of_Car
+0           brio  2005           7.24          9.385       82412    Diesel  Individual       Manual      1          19
+1          amaze  2005           0.40         24.551       29661       NaN      Dealer    Automatic      0          19
+2      grand i10  2017           6.45          4.915       45026       NaN      Dealer       Manual      0           7
+3  corolla altis  2005           9.21          0.944       11282    Petrol      Dealer       Manual      1          19
+4           brio  2010           7.48         11.918       70403    Petrol      Dealer    Automatic      1          14
+[2024-04-17 15:20:29,725] 73 root - INFO - Test Dataframe Head  : 
+        Car_Name  Year  Selling_Price  Present_Price  Kms_Driven Fuel_Type Seller_Type Transmission  Owner  Age_of_Car
+0           jazz  2012          12.18          0.948       34449       NaN      Dealer       Manual      1          12
+1           jazz  2016           0.62          6.489       76160    Petrol      Dealer       Manual      0           8
+2  corolla altis  2017           3.99          6.988       42676    Petrol      Dealer       Manual      0           7
+3           brio  2016           0.48          0.551       37535    Petrol      Dealer       Manual      0           8
+4       fortuner  2014           0.76          0.809       45010    Diesel      Dealer    Automatic      0          10
+[2024-04-17 15:20:29,725] 75 root - INFO - Obtaining preprocessing object
+[2024-04-17 15:20:29,725] 26 root - INFO - Data Transformation initiated
+[2024-04-17 15:20:29,725] 31 root - INFO - Pipeline initiated
+[2024-04-17 15:20:30,036] 111 root - INFO - Exception occured in the initiate_datatransformation

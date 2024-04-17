@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score
 from src.logger import logging
 from sqlalchemy import create_engine
 import pandas as pd
-import mysql.connector as connection
+#import mysql.connector as connection
 
 def save_function(file_path,obj):
     dir_path=os.path.dirname(file_path)
@@ -43,7 +43,7 @@ def load_obj(file_path):
         logging.info("Error in load_object fuction in utils")
         raise CustomException(e,sys)
     
-def fetch_data_from_mysql(host, username, password, database, table, output_folder='data'):
+'''def fetch_data_from_mysql(host, username, password, database, table, output_folder='data'):
     conn = connection.connect(
         host=host,
         user=username,
@@ -59,9 +59,9 @@ def fetch_data_from_mysql(host, username, password, database, table, output_fold
     output_file = os.path.join(output_folder, f'{table}.csv')
     df.to_csv(output_file, index=False)
 
-    print(f'Data fetched and saved to: {output_file}')
+    print(f'Data fetched and saved to: {output_file}')'''
 
 
-fetch_data_from_mysql(host='localhost', username='root', password='Sneha_9601', database='diamondproject', table='carproject')  
+#fetch_data_from_mysql(host='localhost', username='root', password='Sneha_9601', database='diamondproject', table='carproject')  
 
  

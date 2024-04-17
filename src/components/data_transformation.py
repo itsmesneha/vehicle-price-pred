@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from src.exception import CustomException
 from src.logger import logging
@@ -26,10 +26,10 @@ class DataTransformation:
             logging.info('Data Transformation initiated')
 
             # Define which columns should be ordinal-encoded and which should be scaled
-            categorical_cols = ['Fuel_Type', 'Seller_Type', 'Transmission','owner']
-            numerical_cols = ['Year', 'Kms_Driven']
-
+            categorical_cols = ['Fuel_Type', 'Seller_Type', 'Transmission']
+            numerical_cols = ['Year','Present_Price','Kms_Driven','Owner']
             logging.info('Pipeline initiated')
+
 
             num_pipeline=Pipeline(
                 steps=[
@@ -41,8 +41,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                     ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('labelencoder',LabelEncoder()),
-                    ('scaler',StandardScaler())
+                    ('onehotencoder',OneHotEncoder())
                 ]
             )
 
@@ -50,7 +49,7 @@ class DataTransformation:
                 ('num_pipeline',num_pipeline,numerical_cols),
                 ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
-
+            
             return preprocessor
         
             logging.info('Pipeline Completed')
@@ -63,6 +62,11 @@ class DataTransformation:
         try:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
+
+            current_year=pd.Timestamp.now().year
+            
+            train_df['Age_of_Car'] = current_year - train_df['Year']
+            test_df['Age_of_Car'] = current_year - test_df['Year']
 
             logging.info('Read train and test data completed')
             logging.info(f'Train Dataframe Head : \n{train_df.head().to_string()}')
@@ -96,7 +100,7 @@ class DataTransformation:
             )
 
             logging.info('Preprocessor pickle file saved')
-
+            
             return (
                 train_arr,
                 test_arr,
