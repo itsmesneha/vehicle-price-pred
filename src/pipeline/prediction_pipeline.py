@@ -50,7 +50,6 @@ class CustomData:
                        'Seller_Type':[self.Seller_Type],
                        'Transmission': [self.Transmission], 
                        'Owner': [self.Owner], 
-                       'clarity': [self.clarity]
 
                   }
                   df = pd.DataFrame(custom_data_input_dict)

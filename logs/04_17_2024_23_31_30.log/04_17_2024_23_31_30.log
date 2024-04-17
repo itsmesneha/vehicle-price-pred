@@ -1,0 +1,10 @@
+[2024-04-17 23:31:33,060] 96 werkzeug - WARNING -  * Debugger is active!
+[2024-04-17 23:31:33,079] 96 werkzeug - INFO -  * Debugger PIN: 124-499-578
+[2024-04-17 23:32:06,272] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:06] "GET / HTTP/1.1" 200 -
+[2024-04-17 23:32:12,795] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:12] "GET /predict HTTP/1.1" 200 -
+[2024-04-17 23:32:34,324] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2024-04-17 23:32:34,567] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:34] "[36mGET /predict?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-04-17 23:32:34,568] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:34] "[36mGET /predict?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-04-17 23:32:34,740] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:34] "[36mGET /predict?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-04-17 23:32:34,849] 96 werkzeug - INFO - 127.0.0.1 - - [17/Apr/2024 23:32:34] "[36mGET /predict?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-04-17 23:42:34,252] 96 werkzeug - INFO -  * Detected change in 'e:\\project-1\\app.py', reloading

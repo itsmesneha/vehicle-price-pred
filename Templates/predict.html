@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpaperaccess.com/full/3867702.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.25 8.75L10 12.5L13.75 8.75" stroke="%23666"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px;
+            padding-right: 30px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            color: #38206b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .result-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto; /* Added margin */
+        }
+
+        .result {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .explanation {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction Form</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <div class="form-group">
+                <label for="Year">Purchase Year:</label>
+                <input type="text" id="Year" name="Year" placeholder="Enter Year value ">
+            </div>
+
+            <div class="form-group">
+                <label for="Owner">Nymber of owners:</label>
+                <input type="text" id="Owner" name="Owner" placeholder="Enter number of owners (int)">
+            </div>
+            
+            <div class="form-group">
+                <label for="Present_price">Present-price:</label>
+                <input type="text" id="Present_price" name="Present_price" placeholder="Enter Present price (float)">
+            </div>
+        
+            <div class="form-group">
+                <label for="Kms_Driven">Kms-driven:</label>
+                <input type="text" id="Kms_Driven" name="Kms_Driven" placeholder="Enter Kms-driven (int)">
+            </div>       T
+        
+            <div class="form-group">
+              <label for="Fuel-Type">Fuel-type:</label>
+              <select id="Fuel-Type" name="Fuel-Type">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Seller-Type">Seller-type:</label>
+                <select id="Seller-Type" name="Seller-Type">
+                  <option value="Dealer">Dealer</option>
+                  <option value="Individual">Individual</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="Transmission">Transmission:</label>
+                <select id="Transmission" name="Transmission">
+                  <option value="Manual">Manual</option>
+                  <option value="Automatic">Automatic</option>
+                  <option value="CNG">CNG</option>
+                </select>
+             
+                <input type="submit" value="Submit">
+        </form>
+        <div class="result-container">
+            <h2>Result</h2>
+            <div class="result">{{ final_result }}</div>
+            <p class="explanation">The above value represents the predicted price of the car.</p>
+        </div>
+    </div>
+</body>
+</html>
