@@ -1,7 +1,7 @@
 # Car Selling Price Prediction
 ## END-to-END Machine Learning Pipeline Project
 
-![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![scikit-learnn](https://img.shields.io/badge/Library-Scikit_Learn-orange.svg)
+![Python 3.6](https://img.shields.io/badge/Python-3.10-brightgreen.svg) ![scikit-learnn](https://img.shields.io/badge/Library-Scikit_Learn-orange.svg)
 
  ### Setup in VS Code :
 
