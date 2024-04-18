@@ -1,5 +1,10 @@
 # Car Selling Price Prediction
 ## END-to-END Machine Learning Pipeline Project
+
+![Python 3.6](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![scikit-learnn](https://img.shields.io/badge/Library-Scikit_Learn-orange.svg)
+
+ ### Setup in VS Code :
+
 Step 1 : Create a virtual environment
 
      conda create -p venv python==3.10
@@ -46,6 +51,11 @@ Under data folder the dataset will be saved as:
 
          data.csv
 
+### Deployment:
+
+If you want to view the deployed model, click on the following link:<br />
+Deployed at:
+_https://vehicle-price-pred.onrender.com_
 
 • A glimpse of the web app:
 
