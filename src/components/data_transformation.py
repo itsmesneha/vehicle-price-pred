@@ -41,7 +41,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                     ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('onehotencoder',OneHotEncoder())
+                    ('onehotencoder',OneHotEncoder(handle_unknown='ignore'))
                 ]
             )
 
@@ -50,13 +50,13 @@ class DataTransformation:
                 ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
             
-            return preprocessor
-        
             logging.info('Pipeline Completed')
 
         except Exception as e:
             logging.info('Error in Data Transformation')
             raise CustomException(e,sys)
+        
+        return preprocessor
         
     def initiate_data_transformation(self,train_path,test_path):
         try:

@@ -16,12 +16,12 @@ def predict_datapoint():
         # Extract data from the form and create a CustomData instance
         data = CustomData(
             Year=int(request.form.get('Year')),
+            Owner=int(request.form.get("Owner")),
             Present_Price=float(request.form.get('Present_price')),
             Kms_Driven=int(request.form.get("Kms_Driven")),
             Fuel_Type=request.form.get("Fuel_Type"),
             Seller_Type=request.form.get("Seller_Type"),
-            Transmission=request.form.get("Transmission"),
-            Owner=int(request.form.get("Owner"))
+            Transmission=request.form.get("Transmission")
         )
 
         # Convert CustomData instance to a DataFrame

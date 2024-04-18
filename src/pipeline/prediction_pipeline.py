@@ -26,34 +26,34 @@ class PredictPipeline:
         
 class CustomData:
     def __init__(self, Year:int, 
+                     Owner:int,
                      Present_Price:float, 
                      Kms_Driven:int, 
                      Fuel_Type:str, 
                      Seller_Type:str, 
-                     Transmission:str, 
-                     Owner:int):
+                     Transmission:str):
      self.Year = Year
+     self.Owner = Owner
      self.Present_Price = Present_Price
      self.Kms_Driven = Kms_Driven
      self.Fuel_Type = Fuel_Type
      self.Seller_Type = Seller_Type
      self.Transmission= Transmission	 
-     self.Owner = Owner
         
     def get_data_as_dataframe(self): 
              try: 
                   custom_data_input_dict = {
                        'Year': [self.Year], 
+                       'Owner': [self.Owner],
                        'Present_Price': [self.Present_Price],
                        'Kms_Driven': [self.Kms_Driven], 
                        'Fuel_Type': [self.Fuel_Type], 
                        'Seller_Type':[self.Seller_Type],
-                       'Transmission': [self.Transmission], 
-                       'Owner': [self.Owner], 
+                       'Transmission': [self.Transmission] 
 
                   }
                   df = pd.DataFrame(custom_data_input_dict)
-                  logging.info("Dataframe created")
+                  logging.info(f"Dataframe created : {df}")
                   return df
              except Exception as e:
                   logging.info("Error occured in get_data_as_dataframe function in prediction_pipeline")
